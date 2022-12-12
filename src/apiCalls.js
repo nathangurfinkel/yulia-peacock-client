@@ -11,7 +11,7 @@ import axios from 'axios';
 //         res.json(result);
 //       });
 //   });
-const apiHost = '/api';
+const apiHost = 'http://localhost:3001';
 
 export function getAppointmentList() {
   return axios.get(`${apiHost}/record`);
