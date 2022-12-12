@@ -11,7 +11,7 @@ import axios from 'axios';
 //         res.json(result);
 //       });
 //   });
-const apiHost = 'http://localhost:3001/api';
+const apiHost = 'yulia-peacock-server2/api';
 
 export function getAppointmentList() {
   return axios.get(`${apiHost}/record`);
