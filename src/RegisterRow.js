@@ -13,7 +13,7 @@ import { Input } from 'antd';
 import { color } from './LandingPage';
 import { styles, colPropsBig, colPropsSmall } from './LandingPage';
 import { useRequest } from 'ahooks';
-import { postAppointment } from './apiCalls';
+import { postNewAppointment } from './apiCalls';
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -30,7 +30,7 @@ export function RegisterRow(options, dateOptions, timeOptions) {
     error: postAppointmentError,
     loading: postAppointmentLoading,
     run: postAppointmentRun,
-  } = useRequest(postAppointment, {
+  } = useRequest(postNewAppointment, {
     manual: true,
     onSuccess: (result, params) => {
       console.log(result);

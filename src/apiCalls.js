@@ -1,22 +1,61 @@
 import axios from 'axios';
-// mongo db connection
-// This section will help you get a list of all the records.
-// recordRoutes.route('/record').get(function (req, res) {
-//     let db_connect = dbo.getDb('yulia_appointments');
-//     db_connect
-//       .collection('records')
-//       .find({})
-//       .toArray(function (err, result) {
-//         if (err) throw err;
-//         res.json(result);
-//       });
-//   });
-const apiHost = 'yulia-peacock-server2:3001/api';
+
+const apiHost = 'https://seahorse-app-cyj7w.ondigitalocean.app/api';
 
 export function getAppointmentList() {
-  return axios.get(`${apiHost}/record`);
+  const axios = require('axios');
+
+  let config = {
+    method: 'get',
+    url: `${apiHost}/appointments`,
+    headers: {},
+  };
+
+  return axios(config);
 }
 
-export function postAppointment() {
-  return axios.post(`${apiHost}/record/add`);
+export function getAppointmentById(id) {
+  let config = {
+    method: 'get',
+    url: `${apiHost}/appointments/${id}`,
+    headers: {},
+  };
+
+  return axios(config);
+}
+
+export function postNewAppointment(data) {
+  let config = {
+    method: 'post',
+    url: `${apiHost}/appointments/add`,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: data,
+  };
+
+  return axios(config);
+}
+
+export function updateAppointmentById(id, data) {
+  let config = {
+    method: 'patch',
+    url: `${apiHost}/appointments/update?id=${id}`,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: data,
+  };
+
+  return axios(config);
+}
+
+export function deleteAppointmentById(id) {
+  let config = {
+    method: 'delete',
+    url: `${apiHost}/appointments/delete/${id}`,
+    headers: {},
+  };
+
+  return axios(config);
 }

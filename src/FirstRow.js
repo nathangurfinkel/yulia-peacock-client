@@ -18,12 +18,10 @@ export function FirstRow() {
       <Col {...colPropsBig}>
         <Title type='primary'>Yulia</Title>
         <Text
-          style={
-            {
-              fontSize: '1.5rem',
-              // fontWeight: 'bold',
-            }
-          }
+          style={{
+            fontSize: '1.5rem',
+            textAlign: 'left',
+          }}
           type='primary'
         >
           Я Юля Гурфинкель, системный психотерапевт и коуч максимальной

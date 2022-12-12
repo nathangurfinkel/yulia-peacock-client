@@ -25,7 +25,7 @@ import { FirstRow } from './FirstRow';
 import { ReviewsRow } from './ReviewsRow';
 import { RegisterRow } from './RegisterRow';
 import { useRequest } from 'ahooks';
-import { postAppointment } from './apiCalls';
+import { postNewAppointment } from './apiCalls';
 // import createSnap
 
 // remove the listener
@@ -129,7 +129,6 @@ function LandingPage() {
     });
   }
 
-
   //   const scrollRef = useRef(null);
   //   useScrollSnap({
   //     ref: scrollRef,
@@ -154,7 +153,6 @@ function LandingPage() {
               {FirstRow()}
 
               {RegisterRow(
-                
                 options,
                 dateOptions,
                 timeOptions
