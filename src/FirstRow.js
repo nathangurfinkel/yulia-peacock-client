@@ -17,15 +17,28 @@ export function FirstRow() {
       </Col>
       <Col {...colPropsBig}>
         <Title type='primary'>Yulia</Title>
-        <Title
-          style={{
-            fontSize: '1.5rem',
-            // fontWeight: 'bold',
-          }}
-          type='secondary'
+        <Text
+          style={
+            {
+              fontSize: '1.5rem',
+              // fontWeight: 'bold',
+            }
+          }
+          type='primary'
         >
-          Want to get rid of your anxiety? Want to feel more confident?
-        </Title>
+          Я Юля Гурфинкель, системный психотерапевт и коуч максимальной
+          эффективности
+          <ul>
+            <li>
+              помогаю откорректировать жизненный сценарий и начать жить
+              полноценной жизнью
+              <li>
+                наслаждаться отношениями, любимой работой, здоровьем, желаемыми
+                доходами.
+              </li>
+            </li>
+          </ul>
+        </Text>
         <Button
           type='primary'
           onClick={() => {
