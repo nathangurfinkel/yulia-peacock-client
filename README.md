@@ -1,4 +1,4 @@
-# Yulia Peacock-Gurfinkel Landing Page
+# Yulia Peacock-Gurfinkel Landing Page Client
 
 The app is a landing page for a personal coach.
 
@@ -26,9 +26,9 @@ Admin enjoys:
 
 ## Future Features
 
-- i18n
-- Mini-cms to edit the contents of the page
+- Mini-cms to edit the contents of the page (text, images, etc.) instead of hardcoding
 - Different versions of the landing page for different target audiences using cms
+- i18n and routing for different languages/aforementioned versions
 
 Regardless, the coach is highly recommended!
 
