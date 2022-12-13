@@ -1,8 +1,8 @@
 import React from 'react';
 import { Typography, Row, Col, Divider } from 'antd';
-import ReviewsCarousel from './ReviewsCarousel';
-import { color } from './LandingPage';
-import { styles, colPropsSmall, colPropsBig } from './LandingPage';
+import ReviewsCarousel from '../ReviewsCarousel';
+import { color } from '../LandingPage';
+import { styles, colPropsSmall, colPropsBig } from '../LandingPage';
 const { Title, Paragraph, Text } = Typography;
 export function ReviewsRow() {
   return (

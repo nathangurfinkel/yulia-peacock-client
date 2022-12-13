@@ -1,33 +1,30 @@
 import React from 'react';
 import { Button, Typography, Row, Col, Image } from 'antd';
-import { color } from './LandingPage';
-import { styles, colPropsSmall, colPropsBig } from './LandingPage';
+import { color } from '../LandingPage';
+import { styles, colPropsSmall, colPropsBig } from '../LandingPage';
 const { Title, Paragraph, Text } = Typography;
 export function FirstRow() {
   return (
     <Row style={styles.row} id='about'>
       <Col {...colPropsSmall}>
-        <Image
-          width='40%'
-          // sample image
-          src='yulia3.jpg'
-          style={{ borderRadius: '50%' }}
-          preview={false}
-        ></Image>
+        <div style={{ textAlign: 'center' }}>
+          <Image
+            width='40%'
+            // sample image
+            src='yulia3.jpg'
+            style={{ borderRadius: '50%' }}
+            preview={false}
+          ></Image>
+        </div>
       </Col>
       <Col {...colPropsBig}>
         <div style={{ textAlign: 'justify' }}>
-          <Text
-            style={{
-              fontSize: '1.5rem',
-            }}
-            type='primary'
-          >
+          <Title level={5}>
             Я Юля Гурфинкель, системный психотерапевт и коуч максимальной
             эффективности, помогаю откорректировать жизненный сценарий и начать
             жить полноценной жизнью и наслаждаться отношениями, любимой работой,
             здоровьем, желаемыми доходами.
-          </Text>
+          </Title>
         </div>
         <Button
           type='primary'

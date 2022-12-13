@@ -6,6 +6,8 @@ import YuliaApp from './YuliaApp';
 import reportWebVitals from './reportWebVitals';
 import LandingPage from './LandingPage';
 import AdminPage from './AdminPage';
+import CMS from './CMS/CMS';
+import Editor from './CMS/Editor';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -14,6 +16,14 @@ const router = createBrowserRouter([
   {
     path: '/admin',
     element: <AdminPage />,
+  },
+  {
+    path: '/CMS',
+    element: <CMS />,
+  },
+  {
+    path: '/editor',
+    element: <Editor />,
   },
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(

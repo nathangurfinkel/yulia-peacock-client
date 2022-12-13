@@ -21,11 +21,12 @@ import { InputNumber } from 'antd';
 import { Checkbox } from 'antd';
 import { Radio } from 'antd';
 import dayjs from 'dayjs';
-import { FirstRow } from './FirstRow';
-import { ReviewsRow } from './ReviewsRow';
-import { RegisterRow } from './RegisterRow';
+import { FirstRow } from './Rows/FirstRow';
+import { ReviewsRow } from './Rows/FourthRow';
+import { RegisterRow } from './Rows/SecondRow';
 import { useRequest } from 'ahooks';
 import { postNewAppointment } from './apiCalls';
+import { ThirdRow } from './Rows/ThirdRow';
 
 // import createSnap
 
@@ -55,6 +56,11 @@ export const styles = {
   },
   divider: {
     borderColor: color,
+  },
+  dividerTypography: {
+    color: color,
+    fontSize: '1.5rem',
+    fontWeight: 'bold',
   },
   row: {
     minHeight: '100vh',
@@ -159,7 +165,7 @@ function LandingPage() {
                 timeOptions
                 // onSubmit
               )}
-
+              {ThirdRow()}
               {ReviewsRow()}
             </div>
           </Content>

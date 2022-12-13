@@ -23,9 +23,9 @@ import {
 } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
-import { FirstRow } from './FirstRow';
-import { ReviewsRow } from './ReviewsRow';
-import { RegisterRow } from './RegisterRow';
+import { FirstRow } from './Rows/FirstRow';
+import { ReviewsRow } from './Rows/FourthRow';
+import { RegisterRow } from './Rows/SecondRow';
 import { useRequest } from 'ahooks';
 import { getContentList } from './apiCalls';
 import { color, styles } from './LandingPage';

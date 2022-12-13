@@ -10,14 +10,14 @@ import {
   Spin,
 } from 'antd';
 import { Input } from 'antd';
-import { color } from './LandingPage';
-import { styles, colPropsBig, colPropsSmall } from './LandingPage';
+import { color } from '../LandingPage';
+import { styles, colPropsBig, colPropsSmall } from '../LandingPage';
 import { useRequest } from 'ahooks';
-import { postNewAppointment } from './apiCalls';
+import { postNewAppointment } from '../apiCalls';
 
 const { Title, Paragraph, Text } = Typography;
 
-export function RegisterRow(options, dateOptions, timeOptions) {
+export function RegisterRow(options, dateOptions, timeOptions, content) {
   const onFinish = (values) => {
     onSubmit(values);
   };
@@ -59,13 +59,7 @@ export function RegisterRow(options, dateOptions, timeOptions) {
   return (
     <Row style={styles.row} id='register'>
       <Divider orientation='right' orientationMargin={'15vw'} id='#register'>
-        <Typography
-          style={{
-            color: color,
-            fontSize: '1.5rem',
-            fontWeight: 'bold',
-          }}
-        >
+        <Typography style={styles.dividerTypography}>
           {/* landing.freeSession */}
           Free Session
         </Typography>
@@ -74,12 +68,25 @@ export function RegisterRow(options, dateOptions, timeOptions) {
         <Paragraph
           style={{
             fontSize: '1.5rem',
-            //   fontWeight: 'bold',
           }}
         >
           Register for a session with Yulia. You can choose from a variety of
           options.
         </Paragraph>
+        <div style={{ textAlign: 'center' }}>
+          <Button
+            type='default'
+            size='large'
+            onClick={() => {
+              document.getElementById('video').scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+              });
+            }}
+          >
+            {content ? content.leftCol.buttonText : 'Learn More'}
+          </Button>
+        </div>
       </Col>
       <Col {...colPropsSmall}>
         <Form
