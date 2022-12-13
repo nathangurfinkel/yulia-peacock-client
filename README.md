@@ -32,6 +32,8 @@ Admin enjoys:
 
 Regardless, the coach is highly recommended!
 
+- Server: (https://github.com/nathangurfinkel/yulia-peacock-server)
+
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
