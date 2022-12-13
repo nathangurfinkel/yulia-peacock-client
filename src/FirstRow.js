@@ -8,35 +8,27 @@ export function FirstRow() {
     <Row style={styles.row} id='about'>
       <Col {...colPropsSmall}>
         <Image
-          width='60%'
+          width='40%'
           // sample image
           src='yulia3.jpg'
-          style={{ borderRadius: '25px' }}
+          style={{ borderRadius: '50%' }}
           preview={false}
         ></Image>
       </Col>
       <Col {...colPropsBig}>
-        <Title type='primary'>Yulia</Title>
-        <Text
-          style={{
-            fontSize: '1.5rem',
-            textAlign: 'left',
-          }}
-          type='primary'
-        >
-          Я Юля Гурфинкель, системный психотерапевт и коуч максимальной
-          эффективности
-          <ul>
-            <li>
-              помогаю откорректировать жизненный сценарий и начать жить
-              полноценной жизнью
-              <li>
-                наслаждаться отношениями, любимой работой, здоровьем, желаемыми
-                доходами.
-              </li>
-            </li>
-          </ul>
-        </Text>
+        <div style={{ textAlign: 'justify' }}>
+          <Text
+            style={{
+              fontSize: '1.5rem',
+            }}
+            type='primary'
+          >
+            Я Юля Гурфинкель, системный психотерапевт и коуч максимальной
+            эффективности, помогаю откорректировать жизненный сценарий и начать
+            жить полноценной жизнью и наслаждаться отношениями, любимой работой,
+            здоровьем, желаемыми доходами.
+          </Text>
+        </div>
         <Button
           type='primary'
           onClick={() => {

@@ -26,6 +26,7 @@ import { ReviewsRow } from './ReviewsRow';
 import { RegisterRow } from './RegisterRow';
 import { useRequest } from 'ahooks';
 import { postNewAppointment } from './apiCalls';
+
 // import createSnap
 
 // remove the listener
@@ -39,14 +40,14 @@ export const color = '#db3314';
 
 export const styles = {
   'col-big': {
-    textAlign: 'center',
+    // textAlign: 'center',
     padding: '1rem',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: '16px',
   },
   'col-small': {
-    textAlign: 'center',
+    // textAlign: 'center',
     padding: '1rem',
     justifyContent: 'center',
     alignItems: 'center',
@@ -57,14 +58,14 @@ export const styles = {
   },
   row: {
     minHeight: '100vh',
-    maxHeight: '100vh',
+    // maxHeight: '100vh',
     justifyContent: 'center',
     alignItems: 'center',
     // marginBottom: '5vh',
   },
   rowLast: {
     minHeight: '100vh',
-    maxHeight: '100vh',
+    // maxHeight: '100vh',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -98,11 +99,11 @@ function LandingPage() {
   //
 
   const dates = [
-    dayjs().format('YYYY-MM-DD'),
-    dayjs().add(1, 'day').format('YYYY-MM-DD'),
-    dayjs().add(2, 'day').format('YYYY-MM-DD'),
-    dayjs().add(3, 'day').format('YYYY-MM-DD'),
-    dayjs().add(4, 'day').format('YYYY-MM-DD'),
+    dayjs().format('DD-MM-YYYY'),
+    dayjs().add(1, 'day').format('DD-MM-YYYY'),
+    dayjs().add(2, 'day').format('DD-MM-YYYY'),
+    dayjs().add(3, 'day').format('DD-MM-YYYY'),
+    dayjs().add(4, 'day').format('DD-MM-YYYY'),
   ];
   const times = ['09:00', '10:30', '12:00', '13:30', '15:00'];
   const options = [];
