@@ -1,6 +1,36 @@
 # Yulia Peacock-Gurfinkel Landing Page
 
-A single-page app made with AntD. Highly recommended!
+The app is a landing page for a personal coach.
+
+(https://seahorse-app-cyj7w.ondigitalocean.app/)
+
+## Tech Stack
+
+- React Router V6
+- AntD
+- Digital Ocean App Platform
+- (Back end\*) Node.js, Express.js, MongoDB
+
+## Features
+
+Customer enjoys:
+
+- Responsive design
+- Registration form with "add to calendar" functionality
+
+Admin enjoys:
+
+- See appointments in a list (all/current week)
+- See records on a calendar
+- Add to calendar button, WhatsApp button, and email "mailto" integration
+
+## Future Features
+
+- i18n
+- Mini-cms to edit the contents of the page
+- Different versions of the landing page for different target audiences using cms
+
+Regardless, the coach is highly recommended!
 
 ---
 
