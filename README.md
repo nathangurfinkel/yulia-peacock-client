@@ -9,7 +9,7 @@ The app is a landing page for a personal coach.
 - React Router V6
 - AntD
 - Digital Ocean App Platform
-- (Back end\*) Node.js, Express.js, MongoDB
+- (\*) Node.js, Express.js, MongoDB
 
 ## Features
 
