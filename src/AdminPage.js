@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import {
   ConfigProvider,
@@ -54,13 +54,19 @@ export default function AdminPage() {
   // filter the appointments by date for this week
 
   const [showByWeek, setShowByWeek] = useState(false);
+  const [filteredByWeek, setFilteredByWeek] = useState([]);
 
-  const filteredByWeek = listOfAppointments.data.filter((appointment) => {
-    const today = dayjs();
-    const appointmentDate = dayjs(appointment.date);
-    const diff = appointmentDate.diff(today, 'day');
-    return diff >= 0 && diff <= 7;
-  });
+  useEffect(() => {
+    if (listOfAppointments) {
+      const filteredByWeek = listOfAppointments.data.filter((appointment) => {
+        const today = dayjs();
+        const appointmentDate = dayjs(appointment.date);
+        const diff = appointmentDate.diff(today, 'day');
+        return diff >= 0 && diff <= 7;
+      });
+      setFilteredByWeek(filteredByWeek);
+    }
+  }, [listOfAppointments]);
 
   const [current, setCurrent] = useState('Appointments');
 
@@ -227,19 +233,15 @@ export default function AdminPage() {
                         )}
                       />
                     </Space>
-                    {/* <Calendar
+                    <Calendar
                       dateCellRender={dateCellRender}
                       monthCellRender={monthCellRender}
-                    /> */}
+                    />
                   </>
                 )}
               </>
             )}
-            {current === 'Content' && (
-              <>
-                {/* <ContentEditor /> */}
-              </>
-            )}
+            {current === 'Content' && <>{/* <ContentEditor /> */}</>}
           </Layout.Content>
         </Layout>
       </div>
