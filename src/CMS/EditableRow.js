@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card, Row, Space, Typography, Input, Button } from 'antd';
-
+import { Card, Row, Space, Typography, Input, Button, Col } from 'antd';
+import { PlusCircleOutlined } from '@ant-design/icons';
 const { Search } = Input;
 const { Text } = Typography;
 
@@ -40,7 +40,16 @@ const EditableRow = ({ row, children }) => {
           </Space>
         }
       >
-        <Row gutter={[16, 16]}>{children}</Row>
+        <Row gutter={[16, 16]}>
+          {children}
+          <Col span={24}>
+            <div style={{ textAlign: 'center' }}>
+              <PlusCircleOutlined
+                style={{ fontSize: '2rem', color: '#1677ff' }}
+              />
+            </div>
+          </Col>
+        </Row>
       </Card>
     </>
   );
