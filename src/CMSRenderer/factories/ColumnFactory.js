@@ -40,6 +40,7 @@ function ColumnFactory({ id, style, children, columnProps, editMode }) {
             size='large'
             style={{
               padding: '1rem',
+              width: '100%',
             }}
           >
             {children}

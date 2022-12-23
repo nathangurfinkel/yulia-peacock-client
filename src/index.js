@@ -6,8 +6,8 @@ import YuliaApp from './YuliaApp';
 import reportWebVitals from './reportWebVitals';
 import LandingPage from './LandingPage';
 import AdminPage from './AdminPage';
-import CMS from './CMS/CMS';
-import Editor from './CMS/Editor';
+import CMSRenderer from './CMSRenderer/CMSRenderer';
+import Editor from './CMSEditor/Editor';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/CMS',
-    element: <CMS />,
+    element: <CMSRenderer />,
   },
   {
     path: '/editor',

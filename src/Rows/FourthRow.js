@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography, Row, Col, Divider } from 'antd';
-import ReviewsCarousel from '../ReviewsCarousel';
+import ReviewsCarousel from '../CMSRenderer/ReviewsCarousel';
 import { color } from '../LandingPage';
 import { styles, colPropsSmall, colPropsBig } from '../LandingPage';
 const { Title, Paragraph, Text } = Typography;

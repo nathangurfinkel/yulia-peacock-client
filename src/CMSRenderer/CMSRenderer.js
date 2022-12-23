@@ -3,183 +3,17 @@
 
 import { Divider, Layout, Space } from 'antd';
 import React from 'react';
-import ColumnFactory from './ColumnFactory';
-import RowFactory from './RowFactory';
-import ButtonFactory from './ButtonFactory';
-import { FormFactory } from './FormFactory';
+import ColumnFactory from './factories/ColumnFactory';
+import RowFactory from './factories/RowFactory';
+import ButtonFactory from './factories/ButtonFactory';
+import { FormFactory } from './factories/FormFactory';
+import layoutMockData from '../layoutMockData';
 
 const { Header, Content, Footer } = Layout;
 
-function CMS({ editing }) {
+function CMSRenderer({ editing }) {
   //calculate width of columns based on the amount of columns in a row
-  const layoutMockData = {
-    rows: [
-      {
-        id: 'row1',
-        style: {
-          minHeight: '100vh',
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: '1rem',
-        },
-        title: 'title',
-        columnIds: ['col1', 'col2', 'col3'],
-      },
-      {
-        id: 'row2',
-        style: {
-          // backgroundColor: 'green',
-          minHeight: '100vh',
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: '1rem',
-        },
 
-        columnIds: ['col1', 'col2'],
-        title: 'title2',
-        //etc
-      },
-    ],
-    columns: [
-      {
-        id: 'col1',
-        style: {
-          backgroundColor: 'blue',
-          justifyContent: 'center',
-          minHeight: '80vh',
-        },
-
-        content: [
-          {
-            type: 'text',
-            id: 'text1',
-          },
-          {
-            type: 'button',
-            id: 'btn2',
-          },
-          {
-            type: 'form',
-            id: 'form1',
-          },
-        ],
-
-        title: 'title',
-      },
-      {
-        id: 'col2',
-        style: {
-          // padding: '1rem',
-          justifyContent: 'center',
-          alignItems: 'center',
-          borderRadius: '16px',
-
-          backgroundColor: 'red',
-        },
-        content: [
-          {
-            type: 'text',
-            id: 'text2',
-          },
-          {
-            type: 'button',
-            id: 'btn1',
-          },
-        ],
-      },
-      {
-        id: 'col3',
-        style: {
-          backgroundColor: 'black',
-          // padding: '1rem',
-          justifyContent: 'center',
-          minHeight: '100vh',
-        },
-        content: [
-          {
-            type: 'text',
-            id: 'text1',
-          },
-          {
-            type: 'button',
-            id: 'btn1',
-          },
-          {
-            type: 'image',
-            id: 'img1',
-          },
-        ],
-      },
-    ],
-    texts: [
-      {
-        id: 'text1',
-        text: 'text 1111',
-      },
-      {
-        id: 'text2',
-        text: 'text 2222',
-      },
-    ],
-    buttons: [
-      {
-        id: 'btn1',
-        text: 'button 1',
-        onClick: () => {
-          console.log('clicked 1');
-        },
-      },
-      {
-        id: 'btn2',
-        text: 'button 2',
-        onClick: () => {
-          console.log('clicked 2');
-        },
-      },
-    ],
-    images: [
-      {
-        id: 'img1',
-        src: 'https://picsum.photos/200/300',
-      },
-    ],
-    forms: [
-      {
-        id: 'form1',
-        fields: [
-          {
-            id: 'field1',
-            type: 'text',
-            label: 'name',
-            placeholder: 'enter your name',
-          },
-          {
-            id: 'field2',
-            type: 'text',
-            label: 'email',
-            placeholder: 'enter your email',
-          },
-          {
-            id: 'field3',
-            label: 'Username',
-            placeholder: 'username',
-            rules: [
-              {
-                required: true,
-                message: 'Please input your username!',
-              },
-            ],
-          },
-        ],
-        submit: {
-          text: 'submit',
-          onClick: () => {
-            console.log('form submitted');
-          },
-        },
-      },
-    ],
-  };
   const [layout, setLayout] = React.useState(layoutMockData);
   const [editMode, setEditMode] = React.useState(false);
   const calculateColumnWidth = (columnsAmount) => {
@@ -254,6 +88,18 @@ function CMS({ editing }) {
                                   </p>
                                 );
                               case 'button':
+                                // buttons: [
+                                //     {
+                                //       id: 'btn1',
+                                //       text: 'button 1 text',
+                                //       setOnClick: { action: 'scrollTo', target: 'row2' },
+                                //     },
+                                //     {
+                                //       id: 'btn2',
+                                //       text: 'button 2',
+                                //       setOnClick: { action: 'goTo', target: 'https://www.google.com' },
+                                //     },
+                                //   ],
                                 return (
                                   <ButtonFactory
                                     text={
@@ -261,10 +107,10 @@ function CMS({ editing }) {
                                         (button) => button.id === content.id
                                       ).text
                                     }
-                                    action={
+                                    setOnClick={
                                       layout.buttons.find(
                                         (button) => button.id === content.id
-                                      ).onClick
+                                      ).setOnClick
                                     }
                                   />
                                 );
@@ -303,4 +149,4 @@ function CMS({ editing }) {
   );
 }
 
-export default CMS;
+export default CMSRenderer;
